@@ -71,6 +71,9 @@ dependencies {
 
     compileOnly "curse.maven:mcjtylib-233105:2745846"
     runtimeOnly "curse.maven:mcjtylib-233105:2745846"
+	
+	compileOnly "curse.maven:deep-resonance-233398:2704397"
+    runtimeOnly "curse.maven:deep-resonance-233398:2704397"
 
     implementation rfg.deobf("curse.maven:lunatriuscorecanoeedition-1455344:7584047")
     // Example - Modrinth dependencies:
