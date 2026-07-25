@@ -2,6 +2,8 @@ package com.github.lunatrius.ingameinfo.network;
 
 import com.github.lunatrius.ingameinfo.compat.bloodmagic.bmnetwork.BMRemoteDataMessage;
 import com.github.lunatrius.ingameinfo.compat.bloodmagic.bmnetwork.BMResponseMessage;
+import com.github.lunatrius.ingameinfo.compat.extended.network.IGIExtendedRemoteDataMessage;
+import com.github.lunatrius.ingameinfo.compat.extended.network.IGIExtendedResponseMessage;
 import com.github.lunatrius.ingameinfo.compat.thaumcraft.tcnetwork.TCRemoteDataMessage;
 import com.github.lunatrius.ingameinfo.compat.thaumcraft.tcnetwork.TCResponseMessage;
 import com.github.lunatrius.ingameinfo.network.message.MessageSeed;
@@ -26,5 +28,8 @@ public class PacketHandler {
             INSTANCE.registerMessage(BMResponseMessage.ResponseHandler.class, BMResponseMessage.class, 3, Side.CLIENT);
             INSTANCE.registerMessage(BMRemoteDataMessage.Handler.class, BMRemoteDataMessage.class, 4, Side.SERVER);
         }
+
+        INSTANCE.registerMessage(IGIExtendedResponseMessage.ResponseHandler.class, IGIExtendedResponseMessage.class, 5, Side.CLIENT);
+        INSTANCE.registerMessage(IGIExtendedRemoteDataMessage.Handler.class, IGIExtendedRemoteDataMessage.class, 6, Side.SERVER);
     }
 }

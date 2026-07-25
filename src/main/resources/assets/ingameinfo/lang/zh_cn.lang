@@ -1,4 +1,8 @@
 # gui - config - categories
+ingameinfoxml.tag.category.IGIExtended.name=IGI-Extended
+ingameinfoxml.tag.tps.desc=显示服务器 TPS (如: 20.00).
+ingameinfoxml.tag.mspt.desc=显示服务器 MSPT (如: 5.00).
+
 ingameinfoxml.config.category.general=常规
 ingameinfoxml.config.category.general.tooltip=常规设置.
 ingameinfoxml.config.category.alignment=对齐

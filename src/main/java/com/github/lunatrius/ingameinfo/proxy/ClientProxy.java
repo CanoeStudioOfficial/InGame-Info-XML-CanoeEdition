@@ -3,6 +3,7 @@ package com.github.lunatrius.ingameinfo.proxy;
 import com.github.lunatrius.ingameinfo.InGameInfoCore;
 import com.github.lunatrius.ingameinfo.command.InGameInfoCommand;
 import com.github.lunatrius.ingameinfo.compat.bloodmagic.TagBloodMagic;
+import com.github.lunatrius.ingameinfo.compat.extended.TagIGIExtended;
 import com.github.lunatrius.ingameinfo.compat.rftools.TagRFTools;
 import com.github.lunatrius.ingameinfo.compat.sereneseasons.SereneSeasonTags;
 import com.github.lunatrius.ingameinfo.compat.thaumcraft.TagThaumcraft;
@@ -75,6 +76,8 @@ public class ClientProxy extends CommonProxy {
         if (Loader.isModLoaded("sereneseasons")) {
             SereneSeasonTags.register();
         }
+
+        TagIGIExtended.register();
     }
 
     @Override

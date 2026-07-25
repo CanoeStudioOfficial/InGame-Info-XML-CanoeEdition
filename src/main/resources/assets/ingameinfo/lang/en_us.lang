@@ -1,4 +1,8 @@
 # gui - config - categories
+ingameinfoxml.tag.category.IGIExtended.name=IGI-Extended
+ingameinfoxml.tag.tps.desc=Show server TPS (eg: 20.00).
+ingameinfoxml.tag.mspt.desc=Show server MSPT (eg: 5.00).
+
 ingameinfoxml.config.category.general=General
 ingameinfoxml.config.category.general.tooltip=General options.
 ingameinfoxml.config.category.alignment=Alignment
