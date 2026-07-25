@@ -30,6 +30,16 @@ public class InGameInfoCommand extends CommandBase {
     public static final InGameInfoCommand INSTANCE = new InGameInfoCommand();
 
     private final InGameInfoCore core = InGameInfoCore.INSTANCE;
+    private static final String[] SUB_COMMANDS = {
+            Names.Command.RELOAD,
+            Names.Command.LOAD,
+            Names.Command.SAVE,
+            Names.Command.ENABLE,
+            Names.Command.DISABLE,
+            Names.Command.TAGLIST,
+            Names.Command.EDIT,
+            Names.Command.ALIGNMENT
+    };
 
     private InGameInfoCommand() {}
 
@@ -51,7 +61,7 @@ public class InGameInfoCommand extends CommandBase {
     @Override
     public List<String> getTabCompletions(final MinecraftServer server, final ICommandSender sender, final String[] args, final @Nullable BlockPos pos) {
         if (args.length == 1) {
-            return getListOfStringsMatchingLastWord(args, Names.Command.RELOAD, Names.Command.LOAD, Names.Command.SAVE, Names.Command.ENABLE, Names.Command.DISABLE, Names.Command.TAGLIST, Names.Command.EDIT, Names.Command.ALIGNMENT);
+            return getListOfStringsMatchingLastWord(args, SUB_COMMANDS);
         } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase(Names.Command.LOAD)) {
                 return getListOfStringsMatchingLastWord(args, getFilenames());
@@ -70,8 +80,10 @@ public class InGameInfoCommand extends CommandBase {
 
         final List<String> filenames = new ArrayList<String>();
         filenames.add("default");
-        for (final File file : files) {
-            filenames.add(file.getName());
+        if (files != null) {
+            for (final File file : files) {
+                filenames.add(file.getName());
+            }
         }
 
         return filenames;
@@ -87,6 +99,10 @@ public class InGameInfoCommand extends CommandBase {
                 sender.sendMessage(new TextComponentTranslation(success ? Names.Command.Message.SUCCESS : Names.Command.Message.FAILURE));
                 return;
             } else if (args[0].equalsIgnoreCase(Names.Command.LOAD)) {
+                if (args.length < 2) {
+                    throw new WrongUsageException(getUsage(sender));
+                }
+
                 sender.sendMessage(new TextComponentTranslation(Names.Command.Message.LOAD, args[1]));
                 final boolean success = this.core.loadConfig(args[1]);
                 sender.sendMessage(new TextComponentTranslation(success ? Names.Command.Message.SUCCESS : Names.Command.Message.FAILURE));
@@ -96,6 +112,10 @@ public class InGameInfoCommand extends CommandBase {
                 }
                 return;
             } else if (args[0].equalsIgnoreCase(Names.Command.SAVE)) {
+                if (args.length < 2) {
+                    throw new WrongUsageException(getUsage(sender));
+                }
+
                 sender.sendMessage(new TextComponentTranslation(Names.Command.Message.SAVE, args[1]));
                 final boolean success = this.core.saveConfig(args[1]);
                 sender.sendMessage(new TextComponentTranslation(success ? Names.Command.Message.SUCCESS : Names.Command.Message.FAILURE));

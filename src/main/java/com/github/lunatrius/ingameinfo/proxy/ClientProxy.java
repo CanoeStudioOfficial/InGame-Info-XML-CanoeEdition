@@ -87,6 +87,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void serverStarting(final FMLServerStartingEvent event) {
+        event.registerServerCommand(InGameInfoCommand.INSTANCE);
         Tag.setServer(event.getServer());
     }
 
