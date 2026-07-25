@@ -2,11 +2,14 @@
 
 InGame Info XML CanoeEdition is a maintained Minecraft 1.12.2 fork/edition of InGame Info XML. It keeps the original configuration style while integrating several commonly used IGI addon features directly into this mod, so modpacks can use fewer extra addon jars.
 
+This edition also includes the required LunatriusCore functionality internally. A separate LunatriusCore jar is not required for CanoeEdition.
+
 ## Requirements
 
 - Minecraft `1.12.2`
 - Forge `14.23.5.x`
 - Java 8 runtime
+- No separate LunatriusCore installation is required
 
 The development workspace uses Gradle 9.2.1 and RetroFuturaGradle.
 
@@ -54,9 +57,13 @@ Recommended migration steps:
 
 XML, JSON, and TXT formats are still supported. Built-in legacy tags such as `{fps}`, `{day}`, `{biome}`, `{mainhandname}`, `{potionduration0}`, and `{worldname}` keep their names.
 
+If your old instance installed LunatriusCore only for InGame Info XML, you can remove that separate LunatriusCore jar after switching to CanoeEdition. Keep LunatriusCore only if another mod in the same pack still requires it.
+
 ## Merged IGI Addons
 
 The following IGI addon functionality is now built into CanoeEdition. After migration, remove the old addon jar from the `mods` folder to avoid duplicate tag registration or unnecessary extra mods.
+
+LunatriusCore is also bundled internally for this mod's needs. It is not an IGI addon, but it was a common legacy dependency and no longer needs to be installed separately for CanoeEdition.
 
 ### IGI Extended
 
@@ -98,6 +105,7 @@ These integrations are built into CanoeEdition, but they are conditional. The ta
 
 ## Migration Notes for Modpacks
 
+- Remove the standalone LunatriusCore jar if it was installed only for InGame Info XML. Keep it if another mod still depends on it.
 - Remove `IGI-Extended` after installing CanoeEdition. `{tps}` and `{mspt}` are provided by this mod.
 - Remove `IGI-Addon-DeepResonance` after installing CanoeEdition. `{drradiation}` is provided by this mod.
 - Do not remove the actual content mods. CanoeEdition only integrates IGI display tags; it does not replace Thaumcraft, Blood Magic, Deep Resonance, RFTools Dimensions, Serene Seasons, or Tough As Nails.
