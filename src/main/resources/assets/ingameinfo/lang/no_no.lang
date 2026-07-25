@@ -1,7 +1,10 @@
 # gui - config - categories
+ingameinfoxml.tag.category.deepresonance.name=Deep Resonance
+ingameinfoxml.tag.drradiation.desc=Strålingsnivå ved din nåværende posisjon.
+
 ingameinfoxml.tag.category.IGIExtended.name=IGI-Extended
-ingameinfoxml.tag.tps.desc=Show server TPS (eg: 20.00).
-ingameinfoxml.tag.mspt.desc=Show server MSPT (eg: 5.00).
+ingameinfoxml.tag.tps.desc=Vis serverens TPS (f.eks.: 20.00).
+ingameinfoxml.tag.mspt.desc=Vis serverens MSPT (f.eks.: 5.00).
 
 ingameinfoxml.config.category.general=Generelt
 ingameinfoxml.config.category.general.tooltip=Generelle innstillinger.

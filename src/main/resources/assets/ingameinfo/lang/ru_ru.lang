@@ -1,7 +1,10 @@
 # gui - config - categories
+ingameinfoxml.tag.category.deepresonance.name=Deep Resonance
+ingameinfoxml.tag.drradiation.desc=Уровень радиации в текущем местоположении.
+
 ingameinfoxml.tag.category.IGIExtended.name=IGI-Extended
-ingameinfoxml.tag.tps.desc=Show server TPS (eg: 20.00).
-ingameinfoxml.tag.mspt.desc=Show server MSPT (eg: 5.00).
+ingameinfoxml.tag.tps.desc=Показывает TPS сервера (например: 20.00).
+ingameinfoxml.tag.mspt.desc=Показывает MSPT сервера (например: 5.00).
 
 ingameinfoxml.config.category.general=Главная
 ingameinfoxml.config.category.general.tooltip=Основные опции.

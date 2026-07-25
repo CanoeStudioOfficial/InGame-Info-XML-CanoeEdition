@@ -1,4 +1,7 @@
 # gui - config - categories
+ingameinfoxml.tag.category.deepresonance.name=Deep Resonance
+ingameinfoxml.tag.drradiation.desc=当前位置的辐射等级.
+
 ingameinfoxml.tag.category.IGIExtended.name=IGI-Extended
 ingameinfoxml.tag.tps.desc=显示服务器 TPS (如: 20.00).
 ingameinfoxml.tag.mspt.desc=显示服务器 MSPT (如: 5.00).
