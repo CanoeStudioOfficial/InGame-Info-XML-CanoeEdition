@@ -271,14 +271,14 @@ public abstract class ValueComplex extends Value {
 
                     itemStack = new ItemStack(Item.REGISTRY.getObject(what), 1, metadata);
                     if (itemStack.getItem() != null) {
-                        item = new InfoItem(itemStack);
+                        item = InfoItem.get(itemStack);
                         info.add(item);
                         return Tag.getIconTag(item);
                     }
 
                     itemStack = new ItemStack(Block.REGISTRY.getObject(what), 1, metadata);
                     if (itemStack.getItem() != null) {
-                        item = new InfoItem(itemStack);
+                        item = InfoItem.get(itemStack);
                         info.add(item);
                         return Tag.getIconTag(item);
                     }

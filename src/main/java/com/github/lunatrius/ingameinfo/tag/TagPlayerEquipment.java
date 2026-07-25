@@ -146,7 +146,7 @@ public abstract class TagPlayerEquipment extends Tag {
         @Override
         public String getValue() {
             final ItemStack itemStack = getItemStack(this.slot);
-            final InfoItem item = new InfoItem(itemStack, this.large);
+            final InfoItem item = InfoItem.get(itemStack, this.large);
             info.add(item);
             return getIconTag(item);
         }
